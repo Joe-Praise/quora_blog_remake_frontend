@@ -31,7 +31,7 @@ body {
 
 .body--width,
 .max--width {
-  max-width: 1100px;
+  max-width: 950px;
   margin: 0 auto;
 }
 
@@ -40,7 +40,7 @@ nav {
   top: 0;
 }
 
-.activeNavLink .icons{
+.activeNavLink .icons {
   fill: #b92b27;
 }
 .navLinksWidth {
@@ -56,11 +56,12 @@ select:focus {
 }
 
 /* reuseable classes */
-.default-h1, .welcomebanner h1{
+.default-h1,
+.welcomebanner h1 {
   text-align: left;
-  color:initial ;
+  color: initial;
   margin: 0;
-  font-size:1.5rem;
+  font-size: 1.5rem;
 }
 
 .font-tiny {
@@ -134,7 +135,7 @@ select:focus {
   padding: 5px 10px;
   border-radius: 15px;
 }
-.nav-li:hover .nav-title{
+.nav-li:hover .nav-title {
   display: block;
 }
 
@@ -237,14 +238,13 @@ select:focus {
   background-position: 100% 100%;
 }
 
-
 .card {
   background-color: rgb(255, 255, 255);
   height: auto;
   margin: 0 auto;
 }
 
-.card a{
+.card a {
   color: black;
 }
 
@@ -283,7 +283,8 @@ select:focus {
   text-decoration: underline;
 }
 
-.popUp, .initial-Popup {
+.popUp,
+.initial-Popup {
   margin-top: 40px;
   width: max-content;
   padding: 10px 30px;
@@ -296,7 +297,8 @@ select:focus {
   transform: translate(-50%, -50%);
   box-shadow: 2px 3px 10px rgb(38, 38, 38);
 }
-.popUp button, initial-Popup-btn {
+.popUp button,
+initial-Popup-btn {
   border: 1px solid;
   width: auto;
   display: block;
@@ -304,19 +306,20 @@ select:focus {
   padding: 4px;
   font-size: 15px;
 }
-.popUp button:hover, initial-Popup-btn:hover {
+.popUp button:hover,
+initial-Popup-btn:hover {
   background-color: #dcdcdc;
 }
 
-.initial-Popup{
+.initial-Popup {
   width: clamp(320px, 100%, 40%);
-  font-family:cursive;
+  font-family: cursive;
   color: #3459b7;
   font-style: italic;
   text-align: center;
 }
 
-.initial-Popup a{
+.initial-Popup a {
   color: #b92b27;
   font-size: 25px;
 }
@@ -327,7 +330,7 @@ select:focus {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(320px, 100%, 48%);
+  width: clamp(320px, 100%, 40%);
   height: 64vh;
   z-index: 500;
 }
@@ -335,17 +338,17 @@ select:focus {
 .adminLoginModalTweak {
   display: flex;
   flex-flow: column;
-  align-items: center ;
+  align-items: center;
   justify-content: center;
   height: 70vh;
-  width:clamp(370px, 100%, 48%) ;
+  width: clamp(370px, 100%, 48%);
 }
 
-@media (max-width: 320px){
+@media (max-width: 320px) {
   .adminLoginModalTweak {
     height: 95vh;
-    width:clamp(100%);
-  } 
+    width: clamp(100%);
+  }
 }
 
 .back--drop {
@@ -418,11 +421,13 @@ select:focus {
   background-color: #e5e6e689;
 }
 
-.indexContent, .singlePageWrapper, .editPostForm{
+.indexContent,
+.singlePageWrapper,
+.editPostForm {
   flex-basis: 100%;
 }
 
-.sideBar--width{
+.sideBar--width {
   flex-basis: 14%;
 }
 
@@ -585,7 +590,7 @@ select:focus {
   width: 15px;
   margin-right: 10px;
   border-radius: 10px;
-  background-color:#96b4ff;
+  background-color: #96b4ff;
   animation: pulse 1.5s infinite ease-in-out;
 }
 
@@ -603,7 +608,7 @@ select:focus {
 
 .singlePageWrapper {
   margin: 0 auto;
-  padding:0 5px;
+  padding: 0 5px;
 }
 
 .singlePageImg {
@@ -643,53 +648,54 @@ select:focus {
 }
 
 /* Space welcome banner */
-.spaceContentWrapper,.spaceCategory{
+.spaceContentWrapper,
+.spaceCategory {
   flex-basis: 100%;
 }
 
-.invites{
+.invites {
   flex-basis: 20%;
   top: 6%;
 }
-.spaceBgImg{
-  background-size:35% 83%;
+.spaceBgImg {
+  background-size: 35% 83%;
   background-position: right bottom;
   background-repeat: no-repeat;
 }
 
-.welcomebanner h1{
+.welcomebanner h1 {
   font-size: 1.2rem;
 }
-.welcomebanner p{
+.welcomebanner p {
   width: 60%;
   font-size: 0.8rem;
 }
 
-.welcomebanner button{
+.welcomebanner button {
   font-size: small;
   margin-left: 0;
 }
 
 /* Space card */
-.spaceCard{
+.spaceCard {
   min-height: 380px;
   width: 90%;
   position: relative;
   border-radius: 8px;
   margin-bottom: 20px;
 }
-.spaceCard .fig{
+.spaceCard .fig {
   height: 100px;
   margin: 0;
 }
-.spaceCardImg{
+.spaceCardImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 10% 25%;
-  border-radius: 8px 8px 0 0 ;
+  border-radius: 8px 8px 0 0;
 }
-.absoluteSpaceCardImg{
+.absoluteSpaceCardImg {
   position: absolute;
   top: 25%;
   left: 50%;
@@ -699,20 +705,27 @@ select:focus {
   border-radius: 8px;
 }
 
-.spaceCardFigcaption{
+.spaceCardFigcaption {
   height: auto;
-  margin-top:3rem;
+  margin-top: 3rem;
 }
 
-.spaceCardContainer{
+.spaceCardContainer {
   display: block;
   min-height: 100vh;
+}
+.login-container {
+  display: block;
+  max-width: 100%;
+}
+.login-page-content {
+  flex-basis: 100%;
 }
 
 @keyframes pulse {
   0% {
     transform: scale(0.8);
-    background-color:#b92b27;
+    background-color: #b92b27;
     box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
   }
 
@@ -730,7 +743,9 @@ select:focus {
 }
 
 @media (min-width: 992px) {
-  .indexContent, .singlePageWrapper, .editPostForm{
+  .indexContent,
+  .singlePageWrapper,
+  .editPostForm {
     flex-basis: 60%;
   }
   .post--Modal {
@@ -761,7 +776,7 @@ select:focus {
   }
   .singlePageWrapper {
     margin: 10px auto 0 auto;
-    padding:0;
+    padding: 0;
   }
 
   .singlePageImg {
@@ -794,37 +809,50 @@ select:focus {
     padding: 8px 0;
   }
 
-  .spaceCardContainer{
+  .spaceCardContainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2%;
   }
-  
+
   /* Space welcome banner */
-  .spaceContentWrapper,.spaceCategory{
+  .spaceContentWrapper,
+  .spaceCategory {
     flex-basis: 78%;
   }
-  .spaceCard{
+  .spaceCard {
     margin-bottom: 0;
     width: 100%;
   }
-.spaceBgImg{
-  background-size:35% 100%;
+  .spaceBgImg {
+    background-size: 35% 100%;
+  }
+
+  .welcomebanner h1 {
+    font-size: 1.5rem;
+  }
+  .welcomebanner p {
+    width: 100%;
+  }
+
+  .welcomebanner button {
+    font-size: initial;
+  }
+
+  /* login page and signup container*/
+
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-page-content {
+    flex-basis: 45%;
+  }
 }
 
-.welcomebanner h1{
-  font-size: 1.5rem;
-}
-.welcomebanner p{
-  width: 100%;
-}
-
-.welcomebanner button{
-  font-size: initial;
-}
-}
-
-.overFlow-x{
+.overFlow-x {
   overflow-x: auto;
   max-width: 100%;
   background-color: red;

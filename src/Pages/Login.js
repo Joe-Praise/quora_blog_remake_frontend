@@ -27,8 +27,8 @@ const Login = () => {
           A place to share knowledge and better understand the world
         </p>
 
-        <div className="container-fluid row">
-          <div className="sign-up--container col-sm-6 col-xs-12">
+        <div className=" container-fluid login-container">
+          <div className="sign-up--container login-page-content">
             <p className="text-secondary font-tiny">
               By continuing you indicate that you agree to Quora’s{" "}
               <Link to="" className="link">
@@ -53,7 +53,7 @@ const Login = () => {
           </div>
           {openModal && <SignUp handleModal={handleModal} />}
 
-          <LoginForm use={"users"} className="col-sm-6 col-xs-12 px-2" />
+          <LoginForm use={"users"} className="login-page-content px-2" />
         </div>
 
         <div className="border border-end-0 border-end-0 mt-4 p-3 font-tiny text-center ">

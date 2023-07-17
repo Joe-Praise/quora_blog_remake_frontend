@@ -9,7 +9,7 @@ export function getAdminAuthDuration(){
 }
 
 export async function getAdminAuthToken() {
-    const response = fetch(process.env.REACT_APP_API_URL+"admin/admin-profile", {
+    const response = fetch(process.env.REACT_APP_API_URL+"/admin/admin-profile", {
       credentials: "include",
     }).then((res) => res.json()).then((data)=>{
         if(data.err){

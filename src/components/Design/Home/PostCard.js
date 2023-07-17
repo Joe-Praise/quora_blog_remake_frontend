@@ -43,8 +43,6 @@ const PostCard = (props) => {
   const [likes, setLikes] = useState();
   const [unlike, setUnlike] = useState();
 
-  console.log(props.post);
-
   const postReaction = (input, id) => {
     fetch(process.env.REACT_APP_API_URL+`/api/post/${id}/reaction`, {
       method: "POST",
@@ -120,12 +118,12 @@ const PostCard = (props) => {
     setGetLogin((prevState) => !prevState);
   }, [props.post._id, setFilteredComments, setGetLogin]);
 
-  const postCommentHandler = () => {
+  const postCommentHandler = async () => {
     const comment = {
       content: commentValue,
     };
 
-    fetch(process.env.REACT_APP_API_URL+`/api/posts/${props.post._id}/comment`, {
+    await fetch(process.env.REACT_APP_API_URL+`/api/posts/${props.post._id}/comment`, {
       method: "POST",
       body: JSON.stringify(comment),
       headers: { "Content-Type": "application/json" },
@@ -134,7 +132,8 @@ const PostCard = (props) => {
 
     setCommentValue("");
     setPostedComment(true);
-    getPostsHandler();
+    // figuring out why the comments created are not displaying in real time
+    // getPostsHandler();
     setGetLogin((prevState) => !prevState);
   };
 
@@ -175,9 +174,6 @@ const PostCard = (props) => {
     getUnlikeHandler(props.post._id);
     setReaction(false);
   }, [reaction, props.post._id, getLikesHandler, getUnlikeHandler]);
-
-  // console.log(userInfo._id);
-  // console.log(props.post.following);
 
   let displayComment;
   if (isCommentActive) {
