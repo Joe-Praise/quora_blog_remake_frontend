@@ -379,6 +379,7 @@ h1 {
   box-shadow: 2px 3px 10px lightgray;
   overflow: hidden;
   margin: 1rem 0;
+  height: 520px;
 }
 .post-list > *:not(img:first-child) {
   margin-inline: 1rem;
@@ -396,6 +397,7 @@ h1 {
   -webkit-box-orient: vertical;
   overflow: hidden;
   min-height: 8vh;
+  margin: 0;
 }
 /*Note: Space page styling */
 .space-text--ellipsis{
@@ -529,8 +531,10 @@ h1 {
   }
 
   .user-list {
+    width: 100%;
     flex-basis: 33%;
   }
+  
 
   .rightSideContainer {
     flex-basis: 45%;
@@ -547,7 +551,7 @@ h1 {
   /*specifically used for the user card  */
   .userCard--container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin: 0 auto;
     gap: 1%;
     width: 99%;
@@ -557,7 +561,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-flow: row;
+    flex-flow: row nowrap;
     color: black;
     padding: 0 4px;
     gap: 3%;
@@ -615,11 +619,12 @@ h1 {
 
   /* post card */
   .postCard--container {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     width: 98%;
     margin: 0 auto;
     gap: 2%;
   }
+
   /* Create user */
   .create-User-Container-wrapper {
     width: 70%;
