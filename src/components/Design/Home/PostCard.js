@@ -358,7 +358,7 @@ const PostCard = (props) => {
         <Link to={`/post/${props.post._id}`} className="link_backdrop">
           <div>
           <p className="cutoff--text">{props.post.content}</p>
-          {/* <span className="viewMore">(More)</span> */}
+          <span className="viewMore">(More)</span>
           </div>
           {/* if there is an image uplaod this will take the file */}
           {props.post.image && (
