@@ -7,7 +7,7 @@ import Card from "../../UI/Card";
 import { format } from "date-fns";
 
 const Posts = () => {
-  const { posts, getPostsHandler, setAdminLogin } =
+  const { setAdminLogin } =
     useContext(AppContext);
   const [update, setUpdate] = useState(false);
   const [edit, setEdit] = useState("");
@@ -17,9 +17,20 @@ const Posts = () => {
   const [files, setFiles] = useState({
     image: "",
   });
+
+  const[posts, setPosts] = useState([])
   const[existingImage, setExistingImage] = useState();
 
+  const getPostsHandler = useCallback(async () => {
+    await fetch(process.env.REACT_APP_API_URL + `/api/posts`).then((res) => {
+      res.json().then((posts) => {
+        setPosts(posts.data);
+      });
+    });
+  },[])
+
   useEffect(() => {
+    getPostsHandler()
     if (update) {
       getPostsHandler();
     }

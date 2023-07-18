@@ -135,9 +135,7 @@ const PostCard = (props) => {
     if(data.success){
       setCommentValue("");
       setPostedComment(true);
-      // getPostsHandler();
       setGetLogin((prevState) => !prevState);
-
     }else{
       return
     }
@@ -280,12 +278,6 @@ const PostCard = (props) => {
                   {/* where the like, unlike & comment */}
                   <div className="d-flex justify-content-between align-items-center mt-1">
                     <div className=" d-flex justify-content-start  align-items-center">
-                      <LikeAndUnlikeBtn
-                        onLike={likeHandler}
-                        onUnlike={unlikeHandler}
-                        // like={props.post.like}
-                        // dislike={props.post.dislike}
-                      />
                     </div>
 
                     <div className="cursor-pointer">

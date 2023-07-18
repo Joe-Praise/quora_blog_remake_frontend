@@ -16,6 +16,7 @@ const Users = () => {
   
 
   useEffect(() => {
+    getUsers();
     if (update) {
       getUsers();
       setUpdate(false);
