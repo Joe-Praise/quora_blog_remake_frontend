@@ -56,8 +56,8 @@ const AdminTopHeader = (props) => {
             />
           </figure>
         </NavLink>
-        <NavLink className="nav--links mx-2 mx-lg-0 link--underline text-dark font-tiny flex-basis--10 d-none d-lg-block" to="profile">
-          <p className="text--overflow fw-bold">{adminUserInfo.name}</p>
+        <NavLink className="nav--links mx-2 mx-lg-0 link--underline text-dark  flex-basis--10 d-none d-lg-block" to="profile">
+          <p className="text--overflow fw-bold username-size-tiny ">{adminUserInfo.name}</p>
         </NavLink>
       </ul>
     </div>

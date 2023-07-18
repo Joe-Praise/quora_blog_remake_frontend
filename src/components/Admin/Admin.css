@@ -503,7 +503,11 @@ h1 {
 
   .UserPng {
     width: 100%;
-    flex-basis: 11%;
+    flex-basis: 15%;
+  }
+
+  .username-size-tiny{
+    font-size: smaller;
   }
 
   .dashboard-content-Wrapper {
