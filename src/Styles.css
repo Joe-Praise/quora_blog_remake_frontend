@@ -480,9 +480,11 @@ initial-Popup-btn:hover {
   cursor: pointer;
   border: none;
   float: right;
-  margin-top: -30px;
-  padding: 5px;
-  position: relative;
+  width: 100%;
+  text-align: right;
+  /* margin-top: -30px; */
+  /* padding: 5px; */
+  /* position: relative; */
 }
 .viewMore:hover {
   text-decoration: underline;
