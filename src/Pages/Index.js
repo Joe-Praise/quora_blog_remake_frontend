@@ -37,7 +37,7 @@ const Index = () => {
               This project is a remake of Quora blog developed by Joe Praise with the intention of
               becoming a better developer and it's purely for educational purpose.
               <p className="my-2">
-                To visit the official website visit --{"> "}
+                Click the link to visit the official website --{"> "}
                 <a
                   href="http://quora.com"
                   target="_blank"

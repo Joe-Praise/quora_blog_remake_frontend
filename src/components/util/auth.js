@@ -9,8 +9,7 @@ export function getAuthDuration() {
 }
 
 export async function getAuthToken() {
-  
-  const response = await fetch(process.env.REACT_APP_API_URL+"/profile", {
+  const response = await fetch(process.env.REACT_APP_API_URL + "/profile", {
     credentials: "include",
   })
     .then((res) => res.json())

@@ -40,10 +40,10 @@ const ProfileDropdown = ({ userInfo }) => {
       localStorage.removeItem("expiration");
       navigate("/adminLogin");
       setUserInfo({
-        image: null,
-        name: null,
-        email: null,
-        id: null,
+        image: "",
+        name: "",
+        email: "",
+        id: "",
       });
     })
   }

@@ -32,7 +32,7 @@ export function followHandler (loggedInuserId, authorId, reloadFollowing, reload
 const PostCard = (props) => {
   const data = useRouteLoaderData("userProfile");
   const userInfo = data[0];
-  const { setGetLogin, getPostsHandler, setReloadFollowing, setReload } =
+  const { setGetLogin, setReloadFollowing, setReload } =
     useContext(AppContext);
   const [filteredComments, setFilteredComments] = useState([]);
   const [commentValue, setCommentValue] = useState("");
@@ -123,18 +123,24 @@ const PostCard = (props) => {
       content: commentValue,
     };
 
-    await fetch(process.env.REACT_APP_API_URL+`/api/posts/${props.post._id}/comment`, {
+    const response = await fetch(process.env.REACT_APP_API_URL+`/api/posts/${props.post._id}/comment`, {
       method: "POST",
       body: JSON.stringify(comment),
       headers: { "Content-Type": "application/json" },
       credentials: "include",
     });
 
-    setCommentValue("");
-    setPostedComment(true);
-    // figuring out why the comments created are not displaying in real time
-    // getPostsHandler();
-    setGetLogin((prevState) => !prevState);
+    const data = await response.json()
+
+    if(data.success){
+      setCommentValue("");
+      setPostedComment(true);
+      // getPostsHandler();
+      setGetLogin((prevState) => !prevState);
+
+    }else{
+      return
+    }
   };
 
   const deleteCommentHandler = async (id) => {

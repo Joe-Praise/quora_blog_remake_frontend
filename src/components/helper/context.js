@@ -33,33 +33,34 @@ function DataContext({ children }) {
   const [getUsersForAdmin, setUsersForAdmin] = useState([]);
 
   const getProfile = useCallback(async () => {
-    await fetch(process.env.REACT_APP_API_URL+"/profile", {
-      credentials: "include",
-    }).then((res) => {
-      res.json().then((userInfo) => {
-        if (userInfo.err === "Login to have access!") {
-          return;
-        } else {
-          setUserInfo({
-            email: userInfo[0].email,
-            image: userInfo[0].image,
-            name: userInfo[0].name,
-            id: userInfo[0]._id,
-          });
-        }
+
+      await fetch(process.env.REACT_APP_API_URL + "/profile", {
+        credentials: "include",
+      }).then((res) => {
+        res.json().then((userInfo) => {
+          if (userInfo.err === "Login to have access!") {
+            return;
+          } else {
+            setUserInfo({
+              email: userInfo[0].email,
+              image: userInfo[0].image,
+              name: userInfo[0].name,
+              id: userInfo[0]._id,
+            });
+          }
+        });
       });
-    });
     // eslint-disable-next-line
   }, [setUserInfo, getLogin]);
 
   const getAdminProfile = useCallback(async () => {
-    await fetch(process.env.REACT_APP_API_URL+"/admin/admin-profile", {
+    await fetch(process.env.REACT_APP_API_URL + "/admin/admin-profile", {
       credentials: "include",
     }).then((res) => {
       res.json().then((adminInfo) => {
-        if(adminInfo.err){
-          return
-        }else{
+        if (adminInfo.err) {
+          return;
+        } else {
           setUsersForAdmin(true);
           setAdminUserInfo({
             email: adminInfo[0].email,
@@ -79,30 +80,31 @@ function DataContext({ children }) {
   }, [setAdminUserInfo, adminLogin]);
 
   const getPostsHandler = useCallback(async () => {
-    fetch(process.env.REACT_APP_API_URL+`/api/posts`).then((res) => {
-      res.json().then((posts) => {
-        setPosts(posts.data);
-        setFilterSpace(posts.data);
-        setReload(false);
-      });
-    });
-    // eslint-disable-next-line
-  }, [reload]);
-
-  const getUsers = useCallback((id) => {
-    if (id) {
-      fetch(process.env.REACT_APP_API_URL+"/api/users").then((res) => {
-        res.json().then((users) => {
-          setUsers(users.data);
+    if(!userInfo.id) return
+    else{
+      await fetch(process.env.REACT_APP_API_URL + `/api/posts`).then((res) => {
+        res.json().then((posts) => {
+          setPosts(posts.data);
+          setFilterSpace(posts.data);
+          setReload(false);
         });
       });
-    } else {
-      return;
     }
-  }, []);
+  
+    // eslint-disable-next-line
+  }, [reload, userInfo.id]);
+
+  const getUsers = useCallback(() => {
+    fetch(process.env.REACT_APP_API_URL + "/api/users").then((res) => {
+      res.json().then((users) => {
+        setUsers(users.data);
+      });
+    });
+    setAdminLogin(false);
+  }, [setAdminLogin]);
 
   const deleteHandler = async (id) => {
-    await fetch(process.env.REACT_APP_API_URL+"/api/delete-post/" + id, {
+    await fetch(process.env.REACT_APP_API_URL + "/api/delete-post/" + id, {
       method: "DELETE",
     });
     getPostsHandler();
@@ -113,7 +115,7 @@ function DataContext({ children }) {
       if (!id) return;
       else {
         const response = await fetch(
-          process.env.REACT_APP_API_URL+`/api/following/${id}`
+          process.env.REACT_APP_API_URL + `/api/following/${id}`
         );
         const data = await response.json();
         setFollowing(data);
@@ -133,7 +135,6 @@ function DataContext({ children }) {
         }
       }
     }
-
     setUpdatedPost(copiedPost);
     return copiedPost;
   }
@@ -141,7 +142,6 @@ function DataContext({ children }) {
   useEffect(() => {
     getProfile();
     getPostsHandler();
-    getUsers(userInfo.id);
     getFollowing(userInfo.id);
   }, [getPostsHandler, getUsers, getFollowing, userInfo.id, getProfile]);
 
@@ -162,13 +162,7 @@ function DataContext({ children }) {
     if (adminLogin) {
       getAdminProfile();
       setAdminLogin(false);
-    }
-    if (getUsersForAdmin) {
-      fetch(process.env.REACT_APP_API_URL+"/api/users").then((res) => {
-        res.json().then((users) => {
-          setUsers(users.data);
-        });
-      });
+      getUsers(adminUserInfo.id);
     }
   }, [getAdminProfile, adminLogin, getUsers, adminUserInfo, getUsersForAdmin]);
 

@@ -24,6 +24,8 @@ function AdminProfile() {
       credentials: 'include'
     })
 
+    const data = await response.json()
+
     if(!response.ok){
       return
     }else{
@@ -39,7 +41,7 @@ function AdminProfile() {
         bio: ""
       })
       localStorage.removeItem("adminExpiration");
-      navigate("/adminLogin")
+      navigate(data.redirect)
     }
   }
   const handleUpdate = (e) => {
