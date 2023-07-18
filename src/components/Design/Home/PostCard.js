@@ -356,8 +356,10 @@ const PostCard = (props) => {
       {/* the body of the blog post and link */}
       <article className="mt-2 position-relative">
         <Link to={`/post/${props.post._id}`} className="link_backdrop">
+          <div>
           <p className="cutoff--text">{props.post.content}</p>
-          <input type="checkbox" className="viewMore" />
+          <span className="viewMore">(More)</span>
+          </div>
           {/* if there is an image uplaod this will take the file */}
           {props.post.image && (
             <img

@@ -465,40 +465,14 @@ initial-Popup-btn:hover {
   position: relative;
 }
 
-.cutoff--text:has(+ .viewMore:not(:checked))::before {
-  content: "";
-  position: absolute;
-  height: calc(1em * var(--line-height));
-  width: 100%;
-  bottom: 0;
-  pointer-events: none;
-}
-
 .viewMore {
-  appearance: none;
   color: blue;
   cursor: pointer;
   border: none;
-  float: right;
+  text-align: right;
+  display: block;
   width: 100%;
-  text-align: left;
-  /* margin-top: -30px; */
-  /* padding: 5px; */
-  /* position: relative; */
-}
-.viewMore:hover {
-  text-decoration: underline;
-}
-.viewMore::before {
-  content: "(More)";
-}
-
-.viewMore:checked::before {
-  content: "";
-}
-
-.cutoff--text:has(+ .viewMore:checked) {
-  max-height: none;
+  font-size: 14px;
 }
 
 .Link--absolute {
