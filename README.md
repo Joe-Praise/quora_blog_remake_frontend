@@ -9,15 +9,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open [http://localhost:3000] or [https://my-quora-remake.onrender.com] to view it in your browser.
 
 ### `npm run build`
 
@@ -27,44 +19,97 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### About Project
+This project was a challenge gotten from reworkacademy.co in regards my development as a Full stack developer as this is my first full stack project.
+This project is made up of 13 pages which consist of:
+-Sign up & Sign in page(embedded)
+-Home page
+-Profile page
+-Single post page
+-Single post edit page
+-Space page (post category)
+-Filtered space page
+-Admin sign in page
+-Admin Dashboard
+-Admin Posts page(CRUD)
+-Admin Users page(CRUD)
+-Admin profile page
+-Admin Create user page
 
-### `npm run eject`
+Note: its responsive over various screen sizes(mobile, tablets, laptops)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Sign in & Sign up
+The created users using the sign up form are stored in the database and their information is displayed in grid format via the Admin users page.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The Sign in form confirms the identity and existence of a user by cross-examining the password input value againt the users database. It retruns true or false using bycrpt to hash the password. if true it generates a cookie for the user and grants access to the home page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Home page
+This page displays the following:
+-To the left of the page, available spaces are displayed which on click of any, redirects the user to a filtered space page of that space.
+- At the middle, the following can be found:
+    - create post can be found directly beneath the nav bar. here you create a post by space(category) and image uploads are available(bottom of the modal beside "A")
+    -Posts are displayed in card form and for each post. you can click on the image or content to go to the single post page, while also click to... follow, like, dislike and comment on each post.
+-To the left, the provided card will be used for advertisment.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Single post page
+Single post is fetched from the endpoint. It's ID is passed from the post card(on whatever page its found it redirects you to the single product page) to the single post page. using Loader(a react router feature) we get the information from the endpoint before navigating to the page and displaying the appropriate details to the user.
+Note: if the signed in user views a post that was created by that user, he gets the "edit" & "delete" buttons. otherwise they get the "back to homepage" button
 
-## Learn More
+### Single post edit page
+THis page displays a form with details of the currently viewd post. Here we are able to edit the post i.e image, content and space(category).
+on submit it navigates back to the home page.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Space page (post category)
+Here cards of the available space are displayed and on click the navigate the user to the filtered space page which dipslays posts according to their space(category).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Filtered space page
+The page displays all post based off their space and on click of each card you get navigated to the single post page of that post
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Admin Sign in
+This is verified by the backend, To have access use:
+-Email: joepraise1@gmail.com
+-Pwd: AdminJoe1@12345 
 
-### Analyzing the Bundle Size
+To access the Admin Sign in Page:
+-Click the display picture on the Nav bar
+-Click on "Admin" above "Logout"
+-Input the Email and Password attached to the paragraph above and submit.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Admin dashboard page
+This view contains:
+- A table for registered users
+-Total no. of posts 
+-Total no. of users,
+-Total no. of likes,
+-Total no. of dislikes
+- A preview of random posts in a card
 
-### Making a Progressive Web App
+### Admin profile Page
+This page contains info about the signed in admin and also has the logout button
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Admin user Page
+users are fetched from the endpoint and displayed in the user page in grid format. Here the following operations can be made:
+-Delete user
+-Edit user
 
-### Advanced Configuration
+### Admin Post Page
+Posts are fetched from the endpoint and displayed in the post page in grid format. Here the following operations can be made:
+-Delete post
+-Edit post
+-Delete comments associated with post
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Admin create user Page
+This page contains a form that can be used to create a normal user(not an admin).
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Difficulties faced
+-implementing the "following" feature
+-converting the post card to being a reuseable component after completing the project
+-using bootstrap extensively on a project was somewhat forign(with more practice i'd get acquainted)
 
-### `npm run build` fails to minify
+### Deployed Link
+[https://my-quora-remake.onrender.com]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### GitHub Username
+[https://github.com/Joe-Praise]

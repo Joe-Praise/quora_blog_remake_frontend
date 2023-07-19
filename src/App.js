@@ -157,24 +157,6 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
-      // {
-      //   path: "profile/:id",
-      //   loader: (meta) =>
-      //     import("./Pages/RandomUserProfile").then((module) => module.loader(meta)),
-      //   element: (
-      //     <Suspense
-      //       fallback={
-      //         <div className="dots-container">
-      //           <span className="dot"></span>
-      //           <span className="dot"></span>
-      //           <span className="dot"></span>
-      //         </div>
-      //       }
-      //     >
-      //       <RandomUserProfile />
-      //     </Suspense>
-      //   ),
-      // },
       {
         path: "space",
         children: [

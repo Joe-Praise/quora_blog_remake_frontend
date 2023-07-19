@@ -341,16 +341,6 @@ const PostCard = (props) => {
             </span>
           </div>
         </div>
-        {/* <div>
-          {props.post.authorId._id === userInfo._id && (
-            <button
-              type="button"
-              className="btn-close"
-              aria-label="Close"
-              onClick={() => getId(props.post._id)}
-            ></button>
-          )}
-        </div> */}
       </div>
 
       {/* the body of the blog post and link */}
