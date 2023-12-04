@@ -297,7 +297,7 @@ const PostCard = (props) => {
     <Card className="p-2 p-lg-3 mb-2 position-relative">
       <div className="d-flex justify-content-between">
         <div className="d-flex align-items-center">
-          <Link to={`/profile/${props.post.authorId._id}`}>
+          <Link to={`/profile/${props.post.authorId?._id}`}>
             <figure className="m-0">
               <img
                 className="img-fluid img--profile--thumbnail"
